@@ -71,13 +71,23 @@ app.listen(3333, () => {
 ```
 $ yarn add @types/express -D
 ```
+- Instalar a biblioteca "ts-node-dev" como dependência de desenvolvimento
+  - Responsável por monitor alterações no código e atualizar o serviço sem a necessidade de reiniciar o serviço manualmente
+  - É uma alternativa para o "nodemon", "babel", "webpack", "sucrase" e "tsc" em modo watch
+  - É extremamente rápido e proporciona uma experiência bacana de desenvolvimento
+```
+$ yarn add ts-node-dev -D
+
+```
 - Configurar o parâmetro "scripts" no arquivo "./package.json"
   - Adicionar o código abaixo entre os parâmetros "license" e "dependencies"
+  - "transpileOnly" serve para informar ao ts para apenas converter, e não validar se o código está correto. Isso aumenta a performance
+  - "ignore-watch" serve para ignorar alterações que ocorrerem na pasta informada como parâmetro, no nosso caso, "node_modules"
 ```
 ...
   "scripts": {
     "build": "tsc",
-    "dev": "node ./dist/server.js"
+    "dev:server": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts"
   },
 ...
 ```
@@ -90,6 +100,7 @@ $ yarn add @types/express -D
 
 #### Dependências de Desenvolvimento
 - [@types/express](https://yarnpkg.com/package/@types/express)
+- [ts-node-dev](https://yarnpkg.com/package/ts-node-dev)
 - [typescript](https://yarnpkg.com/package/typescript)
 
 ---
@@ -113,7 +124,7 @@ $ yarn build
 ```
 - Inicie o serviço
 ```
-$ node ./dist/server.js
+$ ts-node-dev src/server.ts
 ou
-$ yarn dev
+$ yarn dev:server
 ```
