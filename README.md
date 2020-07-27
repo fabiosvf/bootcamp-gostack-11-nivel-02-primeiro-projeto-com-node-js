@@ -83,7 +83,7 @@ $ yarn add ts-node-dev -D
   - Adicionar o código abaixo entre os parâmetros "license" e "dependencies"
   - "transpile-only" serve para informar ao ts para apenas converter, e não validar se o código está correto. Isso aumenta a performance
   - "ignore-watch" serve para ignorar alterações que ocorrerem na pasta informada como parâmetro, no nosso caso, "node_modules"
-```
+```json
 ...
   "scripts": {
     "build": "tsc",
@@ -101,6 +101,56 @@ $ yarn add ts-node-dev -D
 - [EditorConfig](docs/EditorConfig.pdf)
 - [ESLint](docs/ESLint.pdf)
 - [Prettier](docs/Prettier.pdf)
+
+---
+
+## Debug no VS Code
+
+#### Configurando o Debug no Visual Studio Code
+- Abrir a tela de configuração do Debug
+  - Acessar o menu _View > Run_ ou pressioner _Ctrl + Shift + D_
+  - Clicar em _create a launch.json file_ para criar o arquivo "launch.json"
+  - Caso solicite mais alguma informação, selecione "Node.js"
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "protocol": "inspector",
+      "restart": true,
+      "name": "Debug",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    }
+  ]
+}
+```
+- Além disso, será necessário alterar o script "dev:server" no arquivo de configuração "package.json"
+```json
+...
+"scripts": {
+    "build": "tsc",
+    "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+...
+```
+#### Debugando um código
+- Inicie o servidor
+```
+$ yarn dev:server
+```
+- Clique no Menu _Run > Starting Debug_ ou pressione _F5_
+- Coloque **break points** na parte do código que deseja inspecionar. Para isso clique na lateral esquerda do código sobre a número da linha, e um ponto vermelho irá aparecer.
+- Efetue a requisição
 
 ---
 
@@ -144,7 +194,7 @@ $ yarn build
 ```
 - Inicie o serviço
 ```
-$ ts-node-dev src/server.ts
+$ ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts
 ou
 $ yarn dev:server
 ```
