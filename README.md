@@ -93,6 +93,17 @@ $ yarn add ts-node-dev -D
 ```
 ---
 
+## Padrões de Projeto
+
+#### Introdução
+- [Padrões de projeto com ESLint, Prettier e EditorConfig](docs/Padr%c3%b5es+de+projeto+com+ESLint%2c+Prettier+e+EditorConfig.pdf)
+#### Ferramentas para padronização de código
+- [EditorConfig](docs/EditorConfig.pdf)
+- [ESLint](docs/ESLint.pdf)
+- [Prettier](docs/Prettier.pdf)
+
+---
+
 ## Tecnologias utilizadas
 
 #### Dependências de Projeto
@@ -100,6 +111,15 @@ $ yarn add ts-node-dev -D
 
 #### Dependências de Desenvolvimento
 - [@types/express](https://yarnpkg.com/package/@types/express)
+- [@typescript-eslint/eslint-plugin](https://yarnpkg.com/package/@typescript-eslint/eslint-plugin)
+- [@typescript-eslint/parser](https://yarnpkg.com/package/@typescript-eslint/parser)
+- [eslint](https://yarnpkg.com/package/eslint)
+- [eslint-config-airbnb-base](https://yarnpkg.com/package/eslint-config-airbnb-base)
+- [eslint-config-prettier](https://yarnpkg.com/package/eslint-config-prettier)
+- [eslint-import-resolver-typescript](https://yarnpkg.com/package/eslint-import-resolver-typescript)
+- [eslint-plugin-import](https://yarnpkg.com/package/eslint-plugin-import)
+- [eslint-plugin-prettier](https://yarnpkg.com/package/eslint-plugin-prettier)
+- [prettier](https://yarnpkg.com/package/prettier)
 - [ts-node-dev](https://yarnpkg.com/package/ts-node-dev)
 - [typescript](https://yarnpkg.com/package/typescript)
 
