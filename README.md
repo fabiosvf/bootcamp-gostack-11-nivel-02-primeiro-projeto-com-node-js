@@ -23,7 +23,7 @@ $ yarn init -y
 ```
 $ code .
 ```
-### Instalando bibliotecas e editando configurações
+### Instalando bibliotecas e editando configurações iniciais
 - Instalar a biblioteca "express"
   - Responsável por fornecer recursos em formato de serviço para aplicações web e dispositivos móveis, utilizando como comunicação o protocolo HTTP em conjunto com o padrão RESTFULL
 ```
@@ -96,7 +96,7 @@ $ yarn add ts-node-dev -D
 ## Padrões de Projeto
 
 #### Introdução
-- [Padrões de projeto com ESLint, Prettier e EditorConfig](docs/Padr%c3%b5es+de+projeto+com+ESLint%2c+Prettier+e+EditorConfig.pdf)
+- [Padrões de projeto com ESLint, Prettier e EditorConfig](docs/Padrões%20de%20projeto%20com%20ESLint%2C%20Prettier%20e%20EditorConfig.pdf)
 #### Ferramentas para padronização de código
 - [EditorConfig](docs/EditorConfig.pdf)
 - [ESLint](docs/ESLint.pdf)
