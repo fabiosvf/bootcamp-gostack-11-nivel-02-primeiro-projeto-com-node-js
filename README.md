@@ -81,13 +81,13 @@ $ yarn add ts-node-dev -D
 ```
 - Configurar o parâmetro "scripts" no arquivo "./package.json"
   - Adicionar o código abaixo entre os parâmetros "license" e "dependencies"
-  - "transpileOnly" serve para informar ao ts para apenas converter, e não validar se o código está correto. Isso aumenta a performance
+  - "transpile-only" serve para informar ao ts para apenas converter, e não validar se o código está correto. Isso aumenta a performance
   - "ignore-watch" serve para ignorar alterações que ocorrerem na pasta informada como parâmetro, no nosso caso, "node_modules"
 ```
 ...
   "scripts": {
     "build": "tsc",
-    "dev:server": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts"
+    "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
   },
 ...
 ```
