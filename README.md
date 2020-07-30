@@ -197,6 +197,18 @@ $ yarn add date-fns
     - `./src/repositories/AppointmentsRepository.ts`
     - `./src/routes/appointments.routes.ts`
 
+#### Trabalhando com dados
+- Aplicar o conceito de DTO - Data Transfer Object
+  - O  conceito de DTO permite que organizemos e consolidemos as propriedades em um único objeto afim de serem utilizados na passagem de parâmetros entre os métodos.
+  - Esse conceito deve substituir a passagem de parametros avulsos
+  - Seguem os arquivos editados nesta tarefa:
+    - `./src/repositories/AppointmentsRepository.ts`
+    - `./src/routes/appointments.routes.ts`
+- Tipar em forma de objeto, os parametros do construtor do Model
+  - Para isso utilizaremos a função `Omit` que permite, além de informar o modelo de tipagem utilizado nos parâmetros de entrada, também em caracter de exceção, quais parâmetros devem ser ignorados na assinatura do construtor, por já possuírem algum tratamento dentro do próprio construtor. No nosso exemplo, o campo `id`.
+  - Segue o arquivo editado nesta tarefa:
+    - `./src/models/Appointment.ts`
+
 ---
 
 ## Tecnologias utilizadas
