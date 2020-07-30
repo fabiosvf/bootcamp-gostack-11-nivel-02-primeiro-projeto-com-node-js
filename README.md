@@ -176,6 +176,12 @@ $ yarn add date-fns
 - Implementar validação para a data do agendamento
   - A validação será implementada no arquivo `./src/routes/appointments.routes.ts`
 
+#### Model de Agendamento
+- Criar Models em uma área exclusiva para facilitar a reutilização desses modelos
+  - Os Models são os modelos das entidades criados como `interface`
+  - Essas estruturas serão criadas na pasta `./src/models`
+  - Por convenção, adotamos a inicial do model em maiúscula e no singular, no nosso caso, `./src/models/Appointment.ts`
+
 ---
 
 ## Tecnologias utilizadas
