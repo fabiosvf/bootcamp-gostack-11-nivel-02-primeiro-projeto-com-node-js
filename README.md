@@ -167,11 +167,21 @@ $ yarn dev:server
 $ yarn add uuidv4
 ```
 
+#### Validando a data
+- Instalar a biblioteca "date-fns"
+  - Essa biblioteca será responsável por trabalhar com datas e horários dentro do nosso serviço
+```
+$ yarn add date-fns
+```
+- Implementar validação para a data do agendamento
+  - A validação será implementada no arquivo `./src/routes/appointments.routes.ts`
+
 ---
 
 ## Tecnologias utilizadas
 
 #### Dependências de Projeto
+- [date-fns](https://yarnpkg.com/package/date-fns)
 - [express](https://yarnpkg.com/package/express)
 - [uuidv4](https://yarnpkg.com/package/uuidv4)
 
