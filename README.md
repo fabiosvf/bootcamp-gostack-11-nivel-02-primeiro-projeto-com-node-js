@@ -182,6 +182,14 @@ $ yarn add date-fns
   - Essas estruturas serão criadas na pasta `./src/models`
   - Por convenção, adotamos a inicial do model em maiúscula e no singular, no nosso caso, `./src/models/Appointment.ts`
 
+#### Criando repositórios
+- Aplicar o conceito de repositórios
+  - O repositório nada mais é do que uma conexão entre a persistência dos dados no banco de dados e a nossa rota
+  - `Persistência <-> Repositório <-> Rota`
+  - Em geral nós temos um Repositório por Model, no qual é responsável por criar, armazenar, ler, deletar e editar os dados
+  - Essas estruturas serão criadas na pasta `./src/repositories`
+  - Por convenção, adotamos o nome do model no plural com a inicial maiúscula + o sufixo `Repository`, no nosso caso, `./src/repositories/AppointmentsRepository.ts`
+
 ---
 
 ## Tecnologias utilizadas
