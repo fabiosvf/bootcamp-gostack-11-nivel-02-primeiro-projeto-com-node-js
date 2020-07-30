@@ -150,7 +150,22 @@ $ yarn dev:server
 ```
 - Clique no Menu _Run > Starting Debug_ ou pressione _F5_
 - Coloque **break points** na parte do código que deseja inspecionar. Para isso clique na lateral esquerda do código sobre a número da linha, e um ponto vermelho irá aparecer.
-- Efetue a requisição
+- Efetue a requisição para inspecionar a parte do código desejada
+
+---
+
+## Construindo Aplicação
+
+#### Cadastro de Agendamentos
+- Dividir o arquivo de rotas de acordo com cada entidade da aplicação
+  - O arquivo principal das rotas será `./src/routes/index.ts`
+  - Os demais arquivos seguirão um formato padrão adotando o nome da entidade + o sufixo routes
+    - Em nosso caso iniciaremos com a criação do arquivo `./src/routes/appointments.routes.ts`
+- Instalar a biblioteca "uuidv4"
+  - Essa biblioteca será responsável por gerar um ID único para o cadastro de nossas entidades
+```
+$ yarn add uuidv4
+```
 
 ---
 
@@ -158,6 +173,7 @@ $ yarn dev:server
 
 #### Dependências de Projeto
 - [express](https://yarnpkg.com/package/express)
+- [uuidv4](https://yarnpkg.com/package/uuidv4)
 
 #### Dependências de Desenvolvimento
 - [@types/express](https://yarnpkg.com/package/@types/express)
