@@ -190,6 +190,13 @@ $ yarn add date-fns
   - Essas estruturas serão criadas na pasta `./src/repositories`
   - Por convenção, adotamos o nome do model no plural com a inicial maiúscula + o sufixo `Repository`, no nosso caso, `./src/repositories/AppointmentsRepository.ts`
 
+#### Listando Agendamentos
+- Continuar o refatoramento das rotas
+  - Seguindo o conceito de SoC (Separation of Concerns / Separação de preocupações), a rota não deve ter outras responsabilidades a não ser a de receber as requisições e direcionar para outros módulos que possuem responsabilidades específicas. Desta forma, o código fica limpo e fácil entender e de dar manutenção.
+  - Nesta tarefa foi criado uma rota para obter todos os repositórios. Os arquivos editados foram:
+    - `./src/repositories/AppointmentsRepository.ts`
+    - `./src/routes/appointments.routes.ts`
+
 ---
 
 ## Tecnologias utilizadas
