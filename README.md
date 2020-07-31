@@ -183,7 +183,7 @@ $ yarn add date-fns
   - Por convenção, adotamos a inicial do model em maiúscula e no singular, no nosso caso, `./src/models/Appointment.ts`
 
 #### Criando repositórios
-- Aplicar o conceito de repositórios
+- Aplicar o conceito de `repositórios`
   - O repositório nada mais é do que uma conexão entre a persistência dos dados no banco de dados e a nossa rota
   - `Persistência <-> Repositório <-> Rota`
   - Em geral nós temos um Repositório por Model, no qual é responsável por criar, armazenar, ler, deletar e editar os dados
@@ -192,14 +192,14 @@ $ yarn add date-fns
 
 #### Listando Agendamentos
 - Continuar o refatoramento das rotas
-  - Seguindo o conceito de SoC (Separation of Concerns / Separação de preocupações), a rota não deve ter outras responsabilidades a não ser a de receber as requisições e direcionar para outros módulos que possuem responsabilidades específicas. Desta forma, o código fica limpo e fácil entender e de dar manutenção.
+  - Seguindo o conceito de `SoC (Separation of Concerns / Separação de preocupações)`, a rota não deve ter outras responsabilidades a não ser a de receber as requisições e direcionar para outros módulos que possuem responsabilidades específicas. Desta forma, o código fica limpo e fácil entender e de dar manutenção.
   - Nesta tarefa foi criado uma rota para obter todos os repositórios. Os arquivos editados foram:
     - `./src/repositories/AppointmentsRepository.ts`
     - `./src/routes/appointments.routes.ts`
 
 #### Trabalhando com dados
-- Aplicar o conceito de DTO - Data Transfer Object
-  - O  conceito de DTO permite que organizemos e consolidemos as propriedades em um único objeto afim de serem utilizados na passagem de parâmetros entre os métodos.
+- Aplicar o conceito de `DTO - Data Transfer Object`
+  - O conceito de DTO permite que organizemos e consolidemos as propriedades em um único objeto afim de serem utilizados na passagem de parâmetros entre os métodos.
   - Esse conceito deve substituir a passagem de parametros avulsos
   - Seguem os arquivos editados nesta tarefa:
     - `./src/repositories/AppointmentsRepository.ts`
@@ -208,6 +208,26 @@ $ yarn add date-fns
   - Para isso utilizaremos a função `Omit` que permite, além de informar o modelo de tipagem utilizado nos parâmetros de entrada, também em caracter de exceção, quais parâmetros devem ser ignorados na assinatura do construtor, por já possuírem algum tratamento dentro do próprio construtor. No nosso exemplo, o campo `id`.
   - Segue o arquivo editado nesta tarefa:
     - `./src/models/Appointment.ts`
+
+#### Services & SOLID
+- Aplicar o conceito de `Services`
+  - O conceito de Services permite armazenar toda a regra de negócio da nossa aplicação
+  - Cada serviço deve ter apenas uma única funcionalidade, obedecendo dois princípios importantes `Single Responsability Principle (SOLID)` e `DRY - Don't Repeat Yourself`
+  - Em resumo, um service é responsável pelo:
+    - Recebimento das informações
+    - Tratamento de erros/excessões
+    - Acesso ao repositório
+  - Essas estruturas serão criadas na pasta `./src/services`
+  - Por convenção, adotamos o nome do service de acordo com sua regra de negócio. O nome deve estar no singular com a inicial maiúscula + o sufixo `Service`, no nosso caso, `./src/services/CreateAppointmentService.ts`
+- Aplicar o conceito de `Dependency Inversion Principle (SOLID)`
+  - Em resumo, este conceito significa compartilharmos o mesmo repositório em mais de um Service
+  - Para que isso aconteça, precisaremos passar o repositório como parâmetro do construtor do Service
+  - Seguem os arquivos editados nesta tarefa:
+    - `./src/repositories/AppointmentsRepository.ts`
+    - `./src/services/CreateAppointmentService.ts`
+- Documentos adicionais
+  - [Repository, service e patterns](docs/Repository%2C%20service%20e%20patterns.pdf)
+  - [Princípios do SOLID](docs/Princ%C3%ADpios%20do%20SOLID.pdf)
 
 ---
 
